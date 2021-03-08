@@ -95,7 +95,7 @@ over_font = pygame.font.Font('freesansbold.ttf', 70)
 
 
 def gameover():
-    over_screen = font.render("GAME OVER", True, (255, 255, 255))
+    over_screen = over_font.render("GAME OVER", True, (255, 255, 255))
     screen.blit(over_screen, (200, 250))
 
 # Game Loop
@@ -142,7 +142,7 @@ while running:
     for i in range(num_of_enemies):
 
         # Game over
-        if enemyY[i] > 200:
+        if enemyY[i] > 440:
             for j in range(num_of_enemies):
                 enemyY[j] = 2000
             gameover()
