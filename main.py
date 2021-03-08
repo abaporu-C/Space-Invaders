@@ -51,7 +51,6 @@ bullet_state = "ready"
 def fire_bullet(x, y):
     global bullet_state
     bullet_state = "fire"
-    # print(bullet_state)
     screen.blit(bulletImg, (x + 16, y + 10))
 
 
@@ -71,13 +70,14 @@ while running:
 
     # movement algorithm
     if event.type == pygame.KEYDOWN:
+        print(pygame.key.name(event.key))
         if event.key == pygame.K_LEFT:
             player_change = -2
         if event.key == pygame.K_RIGHT:
             player_change = 2
         if event.key == pygame.K_SPACE:
-            print("space")
             fire_bullet(playerX, bulletY)
+
     if event.type == pygame.KEYUP:
         if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
             player_change = 0
